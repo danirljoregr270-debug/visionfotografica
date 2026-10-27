@@ -1,0 +1,193 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="es" lang="es">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Visión Fotográfica - Pedidos y Consultas</title>
+    <style type="text/css">
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f6f9;
+            color: #333333;
+            margin: 0;
+            padding: 20px;
+        }
+        .contenedor {
+            max-width: 650px;
+            margin: 0 auto;
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+        }
+        ul.menu {
+            list-style-type: none;
+            margin: 0 0 25px 0;
+            padding: 10px;
+            background-color: #2c3e50;
+            border-radius: 8px;
+        }
+        ul.menu li {
+            display: inline;
+            margin-right: 15px;
+        }
+        ul.menu li a {
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 5px 10px;
+        }
+        ul.menu li a:hover {
+            text-decoration: underline;
+        }
+        h1 {
+            color: #2c3e50;
+            border-bottom: 2px solid #eaeded;
+            padding-bottom: 10px;
+            font-size: 24px;
+        }
+        fieldset {
+            border: 1px solid #ccc;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 6px;
+        }
+        legend {
+            font-weight: bold;
+            color: #2c3e50;
+            padding: 0 5px;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: #34495e;
+        }
+        input[type="text"],
+        input[type="email"],
+        select,
+        textarea {
+            width: 100%;
+            padding: 8px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        .botones-container {
+            text-align: right;
+        }
+        button[type="submit"] {
+            background-color: #2980b9;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button[type="submit"]:hover {
+            background-color: #1f618d;
+        }
+        button[type="reset"] {
+            background-color: #e74c3c;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-left: 10px;
+        }
+        button[type="reset"]:hover {
+            background-color: #c0392b;
+        }
+    </style>
+</head>
+<body>
+
+<div class="contenedor">
+
+    <!-- Menú de navegación principal -->
+    <ul class="menu">
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="catalogo.html">Catálogo</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+        <li><a href="pedidos.html">Pedidos</a></li>
+    </ul>
+
+    <h1>Formulario de Pedidos y Consultas</h1>
+    <p>Complete el siguiente formulario para solicitar nuestros servicios fotográficos profesionales.</p>
+
+    <!-- Formulario con Web3Forms -->
+  <form action="https://api.web3forms.com/submit" method="POST">
+
+        <!-- Campo oculto con tu Access Key de Web3Forms -->
+        <input type="hidden" name="access_key" value="8aeea6cd-c6eb-4390-9ec7-c7c258adf12b" />
+
+        <!-- 1. Fieldset para Datos Personales -->
+        <fieldset>
+            <legend>Información Personal</legend>
+            
+            <div class="form-group">
+                <label for="nombre">Nombre Completo:</label>
+                <input type="text" id="nombre" name="name" required="required" />
+            </div>
+
+            <div class="form-group">
+                <label for="correo">Correo Electrónico:</label>
+                <input type="email" id="correo" name="email" required="required" />
+            </div>
+        </fieldset>
+
+        <!-- 2. Fieldset para Detalles del Servicio y Opciones -->
+        <fieldset>
+            <legend>Detalles del Servicio Fotográfico</legend>
+
+            <!-- Lista desplegable -->
+            <div class="form-group">
+                <label for="paquete">Seleccione el Paquete:</label>
+                <select id="paquete" name="paquete">
+                    <option value="paquete1">Paquete 1 (7 fotos - B/. 13.00)</option>
+                    <option value="paquete2">Paquete 2 (15 fotos - B/. 20.00)</option>
+                    <option value="paquete3">Paquete 3 (20 fotos - B/. 28.00)</option>
+                </select>
+            </div>
+
+            <!-- Botones de opción (Radio buttons) -->
+            <div class="form-group">
+                <label>Formato de Entrega:</label>
+                <input type="radio" id="digital" name="formato" value="digital" checked="checked" />
+                <label for="digital" style="display:inline; font-weight:normal;">Digital (Enlace de descarga)</label>
+                <br />
+                <input type="radio" id="impreso" name="formato" value="impreso" />
+                <label for="impreso" style="display:inline; font-weight:normal;">Físico (Impreso)</label>
+            </div>
+
+            <!-- Casilla de verificación (Checkbox) -->
+            <div class="form-group" style="margin-top: 15px;">
+                <input type="checkbox" id="terminos" name="terminos" value="aceptado" required="required" />
+                <label for="terminos" style="display:inline; font-weight:normal;">Acepto los términos y condiciones de servicio</label>
+            </div>
+
+            <!-- Área de texto (Textarea) -->
+            <div class="form-group" style="margin-top: 15px;">
+                <label for="mensaje">Comentarios o requerimientos adicionales:</label>
+                <textarea id="mensaje" name="message" rows="4"></textarea>
+            </div>
+        </fieldset>
+
+        <!-- Botones de Envío y Borrado -->
+        <div class="botones-container">
+            <button type="submit">Enviar Pedido</button>
+            <button type="reset">Borrar</button>
+        </div>
+
+    </form>
+
+</div>
+
+</body>
+</html>
